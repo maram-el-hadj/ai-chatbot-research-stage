@@ -15,16 +15,6 @@ This repository documents my learning journey during my AI chatbot research inte
 
 ---
 
-## Project Structure
-
-```text
-Day01
-Day02
-...
-Day08
-```
-
----
 
 ## Technologies
 
