@@ -1,4 +1,5 @@
 from app.prompts import SYSTEM_PROMPT
+from app.examples import EXAMPLES
 
 messages = [
     {
@@ -6,3 +7,5 @@ messages = [
         "content": SYSTEM_PROMPT
     }
 ]
+
+messages.extend(EXAMPLES)
