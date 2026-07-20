@@ -1,3 +1,4 @@
+
 # Progress
 
 ## Day 08
@@ -10,3 +11,4 @@
 - Added conversation memory.
 - Added system prompts.
 - Improved chatbot architecture.
+
