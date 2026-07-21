@@ -12,11 +12,11 @@ client = OpenAI(
 
 
 def ask_llm(messages):
-
     response = client.chat.completions.create(
-        model=MODEL_NAME,
-        messages=messages,
-        max_tokens=300
-    )
+    model=MODEL_NAME,
+    messages=messages,
+    temperature=1.0,
+    max_tokens=300
+)
 
     return response.choices[0].message.content
