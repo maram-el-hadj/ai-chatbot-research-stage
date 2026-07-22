@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-from app.config import (
+from app.core.config import (
     OPENROUTER_API_KEY,
     MODEL_NAME
 )

@@ -1,5 +1,5 @@
-from app.memory import messages
-from app.chatbot import ask_llm
+from app.core.memory import messages
+from app.services.chatbot import ask_llm
 
 print("=" * 50)
 print("🤖 Research Assistant Chatbot")

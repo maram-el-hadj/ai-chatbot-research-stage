@@ -1,4 +1,4 @@
-from app.prompts import SYSTEM_PROMPT
+from app.core.prompts import SYSTEM_PROMPT
 from app.examples import EXAMPLES
 
 messages = [
