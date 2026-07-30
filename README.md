@@ -43,3 +43,18 @@
 - Analyzed AI chatbot orchestration frameworks.
 - Created a technical benchmark comparing LangChain, LlamaIndex, Haystack, and Semantic Kernel.
 - Structured Phase 2 framework integration roadmap.
+
+# Day 15 — Introduction to LangChain
+
+### What I Learned
+- Discovered **LangChain** and how it simplifies building LLM applications through modular architecture.
+- Learned to use **`PromptTemplate`** for generating dynamic, reusable prompts instead of manual string concatenation.
+
+### Project Improvements & Practice
+- Installed `langchain`, `langchain-openai`, and `langchain-core` in a clean environment.
+- Created a prototype demonstrating how `ChatPromptTemplate` formats input variables (`topic`).
+- Conducted a benchmark comparing **Pure Python** vs **LangChain**.
+
+### Skills & Deliverables
+- **Skills:** LangChain Basics, Prompt Templates, Modular Prompting, Framework Architecture.
+- **Deliverables:** Prototype code (`main.py`), comparison notes (`comparison.md`), documentation, and GitHub commit.
