@@ -30,4 +30,16 @@
 - Refactored project into advanced software architecture (`app/core`, `app/services`, `app/utils`).
 - Restructured imports to improve code organization and separation of concerns.
 - Created `docs/Day12.md` documenting software architecture principles, refactoring benefits, and scalability for future RAG integration.
-- Maintained core chatbot functionality while ensuring modularity, reusability, and maintainability.+
+- Maintained core chatbot functionality while ensuring modularity, reusability, and maintainability.
+
+## Day 13
+
+- Implemented session memory control and sliding context windows.
+- Managed token limits to prevent API context errors.
+- Added dynamic history trimming and session reset capabilities.
+
+## Day 14
+
+- Analyzed AI chatbot orchestration frameworks.
+- Created a technical benchmark comparing LangChain, LlamaIndex, Haystack, and Semantic Kernel.
+- Structured Phase 2 framework integration roadmap.
