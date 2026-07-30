@@ -58,3 +58,10 @@
 ### Skills & Deliverables
 - **Skills:** LangChain Basics, Prompt Templates, Modular Prompting, Framework Architecture.
 - **Deliverables:** Prototype code (`main.py`), comparison notes (`comparison.md`), documentation, and GitHub commit.
+
+## ✅ Day 16
+
+- Learned PromptTemplate, ChatModel and OutputParser in LangChain.
+- Built my first LangChain pipeline connected to an LLM.
+- Compared prompt behavior using different variables.
+- Prepared the project for more advanced LangChain components.
