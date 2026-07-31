@@ -65,3 +65,10 @@
 - Built my first LangChain pipeline connected to an LLM.
 - Compared prompt behavior using different variables.
 - Prepared the project for more advanced LangChain components.
+
+## ✅ Day 17
+
+- Learned the LangChain Expression Language (LCEL).
+- Built reusable pipelines with PromptTemplate, ChatModel and OutputParser.
+- Explored invoke(), batch() and stream() methods.
+- Improved my understanding of modular LLM workflows.
