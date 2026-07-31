@@ -72,3 +72,10 @@
 - Built reusable pipelines with PromptTemplate, ChatModel and OutputParser.
 - Explored invoke(), batch() and stream() methods.
 - Improved my understanding of modular LLM workflows.
+
+## ✅ Day 18
+
+- Learned how LangChain loads external documents.
+- Extracted text and metadata from a PDF using PyPDFLoader.
+- Understood the difference between raw text and Document objects.
+- Started building the foundation of a Retrieval-Augmented Generation (RAG) pipeline.

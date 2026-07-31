@@ -22,11 +22,10 @@ parser = StrOutputParser()
 
 chain = prompt | llm | parser
 
-response = chain.invoke(
+for chunk in chain.stream(
     {
-        "topic": "Embeddings",
-        "level": "beginner"
+        "topic":"Artificial Intelligence",
+        "level":"beginner"
     }
-)
-
-print(response)
+):
+    print(chunk, end="", flush=True)
