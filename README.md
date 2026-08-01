@@ -86,3 +86,10 @@
 - Compared fixed-size chunking with overlapping chunks.
 - Prepared document chunks for embedding generation.
 - Advanced one step further in the RAG pipeline.
+
+## ✅ Day 20
+
+- Learned how embedding models convert text into numerical vectors.
+- Generated embeddings locally using Hugging Face.
+- Compared embeddings for different sentences.
+- Prepared document vectors for semantic search in RAG systems.

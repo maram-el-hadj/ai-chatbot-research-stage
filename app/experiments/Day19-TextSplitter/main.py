@@ -5,7 +5,7 @@ loader = PyPDFLoader("app/documents/AI.pdf")
 documents = loader.load()
 
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=800,
+    chunk_size=200,
     chunk_overlap=100
 )
 
