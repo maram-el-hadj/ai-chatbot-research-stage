@@ -4,4 +4,4 @@ loader = PyPDFLoader("app/documents/AI.pdf")
 
 documents = loader.load()
 
-print(documents[0].page_content)
+print(len(documents))

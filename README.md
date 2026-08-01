@@ -79,3 +79,10 @@
 - Extracted text and metadata from a PDF using PyPDFLoader.
 - Understood the difference between raw text and Document objects.
 - Started building the foundation of a Retrieval-Augmented Generation (RAG) pipeline.
+
+## ✅ Day 19
+
+- Learned how to split documents into smaller chunks using LangChain.
+- Compared fixed-size chunking with overlapping chunks.
+- Prepared document chunks for embedding generation.
+- Advanced one step further in the RAG pipeline.
