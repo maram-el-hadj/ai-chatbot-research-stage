@@ -93,3 +93,10 @@
 - Generated embeddings locally using Hugging Face.
 - Compared embeddings for different sentences.
 - Prepared document vectors for semantic search in RAG systems.
+
+## ✅ Day 21
+
+- Learned how vector databases store document embeddings.
+- Built semantic search examples using FAISS and ChromaDB.
+- Compared vector search with traditional keyword search.
+- Prepared the storage layer for a complete RAG pipeline.
