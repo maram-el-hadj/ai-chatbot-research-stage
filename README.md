@@ -100,3 +100,10 @@
 - Built semantic search examples using FAISS and ChromaDB.
 - Compared vector search with traditional keyword search.
 - Prepared the storage layer for a complete RAG pipeline.
+
+## ✅ Day 22
+
+- Learned how Retrievers retrieve the most relevant document chunks.
+- Built a semantic retrieval system using FAISS.
+- Compared similarity search with the Retriever interface.
+- Completed the retrieval stage of the RAG pipeline.
