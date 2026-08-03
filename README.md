@@ -107,3 +107,10 @@
 - Built a semantic retrieval system using FAISS.
 - Compared similarity search with the Retriever interface.
 - Completed the retrieval stage of the RAG pipeline.
+
+## ✅ Day 23
+
+- Built a complete Retrieval-Augmented Generation (RAG) chatbot.
+- Connected document loading, chunking, embeddings, FAISS, retriever, and LLM.
+- Tested the chatbot with document-based questions.
+- Validated the first end-to-end RAG pipeline.

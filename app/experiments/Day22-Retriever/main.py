@@ -16,7 +16,7 @@ embedding = HuggingFaceEmbeddings(
 db = FAISS.from_texts(texts, embedding)
 
 retriever = db.as_retriever(
-    search_kwargs={"k":1}
+    search_kwargs={"k":2}
 )
 
 query = "What is AI?"
@@ -29,7 +29,7 @@ for i, doc in enumerate(results, start=1):
     print(f"Document {i}:")
     print(doc.page_content)
     print("-"*50)
-    similarity = db.similarity_search(
+similarity = db.similarity_search(
     "Artificial Intelligence",
     k=2
 )
@@ -46,4 +46,4 @@ for doc in similarity:
 print("\nRetriever")
 
 for doc in retrieved:
-    print(doc.page_content)
+    print(doc.page_content)    
