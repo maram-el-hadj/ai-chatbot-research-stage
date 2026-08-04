@@ -114,3 +114,10 @@
 - Connected document loading, chunking, embeddings, FAISS, retriever, and LLM.
 - Tested the chatbot with document-based questions.
 - Validated the first end-to-end RAG pipeline.
+
+## ✅ Day 24
+
+- Added conversation history to the RAG chatbot.
+- Implemented a simple conversational memory.
+- Tested follow-up questions using previous context.
+- Improved the chatbot experience with multi-turn conversations.
