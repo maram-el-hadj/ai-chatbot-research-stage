@@ -128,3 +128,11 @@
 - Built the first graphical interface for the chatbot.
 - Added a chat area, sidebar, and PDF uploader.
 - Prepared the application for RAG integration.
+
+## ✅ Day 26
+
+- Connected the Streamlit interface with the RAG pipeline.
+- Built a FAISS vector database from uploaded PDFs.
+- Added contextual question answering using DeepSeek.
+- Improved prompt quality and retrieval.
+- Added chat history, retrieved chunk viewer, and clear chat functionality.
