@@ -121,3 +121,10 @@
 - Implemented a simple conversational memory.
 - Tested follow-up questions using previous context.
 - Improved the chatbot experience with multi-turn conversations.
+
+## ✅ Day 25
+
+- Learned the fundamentals of Streamlit.
+- Built the first graphical interface for the chatbot.
+- Added a chat area, sidebar, and PDF uploader.
+- Prepared the application for RAG integration.
