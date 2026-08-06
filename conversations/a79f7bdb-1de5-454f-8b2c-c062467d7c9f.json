@@ -1,0 +1,15 @@
+{
+    "id": "a79f7bdb-1de5-454f-8b2c-c062467d7c9f",
+    "title": "Greeting Mara",
+    "created_at": "2026-08-06T12:30:28.765554",
+    "messages": [
+        {
+            "role": "user",
+            "content": "hi my name is mara and u"
+        },
+        {
+            "role": "assistant",
+            "content": "Hi Mara! 😊 How can I help you today? Let me know what you're looking for—I'm happy to assist with anything! "
+        }
+    ]
+}

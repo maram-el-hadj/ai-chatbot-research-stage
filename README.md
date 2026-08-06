@@ -143,3 +143,10 @@
 - Added chat history, dark mode toggle, sidebar improvements, and responsive layout.
 - Improved the overall user experience with streaming responses and PDF management.
 - Prepared the application for advanced features and deployment.
+
+# Day 28 - Chat History
+
+- Added persistent chat history using JSON files.
+- Implemented multiple conversations with automatic loading.
+- Integrated real-time streaming for assistant responses.
+- Improved the overall conversational experience.
