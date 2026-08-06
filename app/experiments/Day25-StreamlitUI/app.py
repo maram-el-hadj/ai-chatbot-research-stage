@@ -1,20 +1,33 @@
 import os
 import tempfile
+
 import streamlit as st
 
 from dotenv import load_dotenv
+
 from openai import OpenAI
 
 from langchain_community.document_loaders import PyPDFLoader
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain_community.vectorstores import FAISS
 
 # =====================================
 # Load Environment Variables
 # =====================================
+def load_css():
+    # Y-gebbed l-dossier l-li fīh app.py (ya'ni dossier css)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    css_path = os.path.join(current_dir, "style.css")
+    
+    with open(css_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_dotenv()
+load_css()
 
 client = OpenAI(
     api_key=os.getenv("OPENROUTER_API_KEY"),
@@ -26,47 +39,97 @@ client = OpenAI(
 # =====================================
 
 st.set_page_config(
-    page_title="RAG Chatbot",
+
+    page_title="AI Research Assistant",
+
     page_icon="🤖",
-    layout="wide"
+
+    layout="wide",
+
+    initial_sidebar_state="expanded"
+
 )
 
-st.title("🤖 RAG Chatbot")
+st.markdown(
+    """
+# 🤖 AI Research Assistant
+
+Chat with your documents using Retrieval-Augmented Generation.
+"""
+)
 
 st.caption(
     "Upload a PDF and chat with your document using Retrieval-Augmented Generation."
 )
-
-# =====================================
-# Sidebar
-# =====================================
-
-with st.sidebar:
-
-    st.header("⚙️ Configuration")
-
-    st.success("Model: DeepSeek")
-
-    st.success("Embedding: MiniLM")
-
-    st.success("Vector Database: FAISS")
-
-    st.success("Retriever: Top 3")
-
-# =====================================
-# Session State
-# =====================================
-
+# ------------------------------------
+# session state 
+# --------------------------------------
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+if "questions" not in st.session_state:
+    st.session_state.questions = 0
 
 if "retriever" not in st.session_state:
     st.session_state.retriever = None
 
 if "pdf_name" not in st.session_state:
     st.session_state.pdf_name = None
-
 # =====================================
+# Sidebar
+# =====================================
+
+# =========================================================
+# 2️⃣ Sidebar UI
+# =========================================================
+with st.sidebar:
+    st.title("📄 Workspace")
+    st.divider()
+    
+    st.subheader("Document")
+    uploaded_file = st.file_uploader("Upload PDF", type=["pdf"])
+    
+    if st.session_state.pdf_name:
+        st.success(f"📄 {st.session_state.pdf_name}")
+    
+    st.divider()
+    st.subheader("AI")
+    st.write("Model : DeepSeek")
+    st.write("Embedding : MiniLM")
+    st.write("Vector DB : FAISS")
+    st.write("Retriever : Top-5")
+    
+    st.divider()
+    st.subheader("📊 Statistics")
+    st.metric("Questions", st.session_state.questions)
+    
+    if "chunks" in st.session_state:
+        st.metric("Chunks", len(st.session_state.chunks))
+        
+    st.divider()
+    st.subheader("Actions")
+    if st.button("🗑️ Clear Chat"):
+        st.session_state.messages = []
+        st.session_state.questions = 0
+        if "last_docs" in st.session_state:
+            del st.session_state["last_docs"]
+        st.rerun()
+    # =========================================================
+# 3️⃣ Welcome Message (Display only if no messages)
+# =========================================================
+if len(st.session_state.messages) == 0:
+    st.info(
+        """
+👋 Welcome!
+
+Upload a PDF.
+
+Ask questions.
+
+Receive contextual answers.
+"""
+    )    
+# ====================================
 # Upload PDF
 # =====================================
 
@@ -105,6 +168,7 @@ if (
         )
 
         chunks = splitter.split_documents(documents)
+        st.session_state.chunks = chunks
 
         # Create embeddings
         embeddings = HuggingFaceEmbeddings(
@@ -157,6 +221,7 @@ for message in st.session_state.messages:
 question = st.chat_input("💬 Ask a question about your PDF...")
 
 if question:
+    st.session_state.questions+=1
 
     # 🟢 Handled Summary check after receiving user question
     question_lower = question.lower()
@@ -271,48 +336,4 @@ Retrieved Context:
 
     )
 
-# =====================================
-# Sidebar Information
-# =====================================
 
-with st.sidebar:
-
-    st.divider()
-
-    if st.session_state.pdf_name:
-
-        st.success(f"📄 {st.session_state.pdf_name}")
-
-    if "chunks" in st.session_state:
-
-        st.info(f"Chunks : {len(st.session_state.chunks)}")
-
-# =====================================
-# Clear Chat Button
-# =====================================
-
-if st.sidebar.button("🗑️ Clear Chat"):
-
-    st.session_state.messages = []
-    
-    # Clean last_docs on clear chat if exists
-    if "last_docs" in st.session_state:
-        del st.session_state["last_docs"]
-
-    st.rerun()
-
-# =====================================
-# Retrieved Chunks Viewer
-# =====================================
-
-if "last_docs" in st.session_state:
-
-    with st.expander("📚 Retrieved Chunks"):
-
-        for i, doc in enumerate(st.session_state.last_docs):
-
-            st.markdown(f"### Chunk {i+1}")
-
-            st.write(doc.page_content)
-
-            st.divider()

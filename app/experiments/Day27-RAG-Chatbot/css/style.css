@@ -1,0 +1,142 @@
+/* ===========================
+   General
+=========================== */
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+/* Hide Streamlit Menu */
+
+#MainMenu{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+header{
+    visibility:hidden;
+}
+
+/* App */
+
+.stApp{
+
+    background-color:#0E1117;
+
+}
+
+/* Sidebar */
+
+section[data-testid="stSidebar"]{
+
+    background:#161B22;
+
+}
+
+/* Chat Messages */
+
+[data-testid="stChatMessage"]{
+
+    border-radius:15px;
+
+    padding:12px;
+
+}
+
+/* User */
+
+[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]){
+
+    background:#1F2937;
+
+}
+
+/* Assistant */
+
+[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]){
+
+    background:#111827;
+
+}
+
+/* Upload */
+
+[data-testid="stFileUploader"]{
+
+    border-radius:15px;
+
+}
+
+/* Buttons */
+
+.stButton button{
+
+    width:100%;
+
+    border-radius:12px;
+
+}
+
+/* Input */
+
+textarea{
+
+    border-radius:15px !important;
+
+}
+/* =========================
+Main Container
+=========================*/
+
+.block-container{
+
+    padding-top:2rem;
+
+    padding-bottom:2rem;
+
+    max-width:1200px;
+
+}
+
+/* Sidebar */
+
+section[data-testid="stSidebar"]{
+
+    border-right:1px solid #e5e7eb;
+
+}
+
+/* Metrics */
+
+[data-testid="metric-container"]{
+
+    border-radius:15px;
+
+    padding:15px;
+
+    border:1px solid rgba(150,150,150,.2);
+
+}
+
+/* Buttons */
+
+.stButton>button{
+
+    width:100%;
+
+    border-radius:12px;
+
+    height:45px;
+
+}
+
+/* Footer */
+
+footer{
+
+    visibility:hidden;
+
+}

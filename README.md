@@ -136,3 +136,10 @@
 - Added contextual question answering using DeepSeek.
 - Improved prompt quality and retrieval.
 - Added chat history, retrieved chunk viewer, and clear chat functionality.
+
+# Day 27 - UI Enhancement
+
+- Redesigned the RAG Chatbot interface with a clean and modern Streamlit UI.
+- Added chat history, dark mode toggle, sidebar improvements, and responsive layout.
+- Improved the overall user experience with streaming responses and PDF management.
+- Prepared the application for advanced features and deployment.
