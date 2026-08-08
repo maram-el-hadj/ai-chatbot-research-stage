@@ -1,4 +1,14 @@
-venv/
 .env
+venv/
+.venv/
 __pycache__/
 *.pyc
+
+data/uploads/
+conversations/
+
+.streamlit/secrets.toml
+
+*.pdf
+*.log
+.DS_Store

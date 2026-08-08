@@ -1,25 +1,87 @@
-import time
-import streamlit as st
+from openai import OpenAI
+
+from config import (
+    OPENROUTER_API_KEY,
+    BASE_URL,
+    MODEL_NAME,
+    TEMPERATURE,
+    MAX_TOKENS,
+)
 
 
-def stream_response(text: str, delay: float = 0.015):
+# ==========================================
+# OpenRouter Client
+# ==========================================
+
+client = OpenAI(
+    api_key=OPENROUTER_API_KEY,
+    base_url=BASE_URL
+)
+
+
+# ==========================================
+# Stream Answer
+# ==========================================
+
+def stream_answer(messages):
     """
-    Display a fake streaming effect word by word.
-    Returns the full generated text.
+    Stream the AI response token by token
+    from OpenRouter.
+
+    Yields small chunks of text as they arrive.
     """
 
-    placeholder = st.empty()
+    if not messages:
+        raise ValueError(
+            "No messages were provided."
+        )
 
-    current = ""
+    stream = client.chat.completions.create(
 
-    for word in text.split():
+        model=MODEL_NAME,
 
-        current += word + " "
+        messages=messages,
 
-        placeholder.markdown(current + "▌")
+        temperature=TEMPERATURE,
 
-        time.sleep(delay)
+        max_tokens=MAX_TOKENS,
 
-    placeholder.markdown(current)
+        stream=True
+    )
 
-    return current
+    for chunk in stream:
+
+        if not chunk.choices:
+            continue
+
+        delta = chunk.choices[0].delta
+
+        if delta is None:
+            continue
+
+        content = delta.content
+
+        if content:
+            yield content
+
+
+# ==========================================
+# Get Complete Response
+# ==========================================
+
+def get_streamed_answer(messages):
+    """
+    Stream the response and return
+    the complete generated answer.
+
+    Returns:
+        str: complete AI response
+    """
+
+    full_response = ""
+
+    for chunk in stream_answer(messages):
+
+        full_response += chunk
+
+    return full_response

@@ -150,3 +150,10 @@
 - Implemented multiple conversations with automatic loading.
 - Integrated real-time streaming for assistant responses.
 - Improved the overall conversational experience.
+
+# Day 29 - Final Version
+
+- Improved the RAG pipeline with better prompting and retrieval.
+- Added source references and conversation export.
+- Cleaned the project architecture and error handling.
+- Prepared the application for deployment and documentation.
