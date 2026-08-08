@@ -1,5 +1,5 @@
 import os
-
+import streamlit as st
 from dotenv import load_dotenv
 
 
@@ -14,16 +14,21 @@ load_dotenv()
 # OPENROUTER
 # =========================================================
 
-OPENROUTER_API_KEY = os.getenv(
-    "OPENROUTER_API_KEY"
-)
+# Check Streamlit Cloud Secrets first, then fallback to local .env
+try:
+    if "OPENROUTER_API_KEY" in st.secrets:
+        OPENROUTER_API_KEY = st.secrets["OPENROUTER_API_KEY"]
+    else:
+        OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+except Exception:
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 BASE_URL = (
     "https://openrouter.ai/api/v1"
 )
 
 MODEL_NAME = (
-    "deepseek/deepseek-chat-v3-0324"
+    "deepseek/deepseek-chat"
 )
 
 
@@ -65,7 +70,7 @@ MAX_TOKENS = 500
 # APPLICATION
 # =========================================================
 
-APP_NAME = "DocuMind AI"  # walla akhtar wahed m les noms elli fo9
+APP_NAME = "DocuMind AI"
 APP_ICON = "🤖"
 APP_DESCRIPTION = "Chat with your PDF using Retrieval-Augmented Generation (RAG)."
 
